@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shruthi Anugu — Software Developer</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+<!-- <style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#080810;
+  --bg2:#0f0f1a;
+  --bg3:#171724;
+  --bg4:#1f1f2e;
+  --text:#eeeef8;
+  --text2:#9898b8;
+  --accent:#e05cad;
+  --accent2:#a855f7;
+  --accent3:#34d399;
+  --card:#13131e;
+  --border:#252538;
+  --border2:#383858;
+  --glow:rgba(224,92,173,0.12);
+  --glow2:rgba(168,85,247,0.10);
+  --radius:14px;
+  --radius-sm:8px;
+  --shadow:0 8px 32px rgba(0,0,0,0.5);
+}
+[data-theme="light"]{
+  --bg:#fdf4fb;
+  --bg2:#ffffff;
+  --bg3:#f5eaf8;
+  --bg4:#ece0f0;
+  --text:#1a0e20;
+  --text2:#6b5878;
+  --accent:#c0359a;
+  --accent2:#7c3aed;
+  --accent3:#059669;
+  --card:#ffffff;
+  --border:#e2d0ec;
+  --border2:#cdb8de;
+  --glow:rgba(192,53,154,0.07);
+  --glow2:rgba(124,58,237,0.07);
+  --shadow:0 8px 32px rgba(0,0,0,0.08);
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.7;
+  overflow-x:hidden;
+}
+.container{max-width:1080px;margin:0 auto;padding:0 24px}
+h1,h2,h3,h4{font-family:'Syne',sans-serif;line-height:1.2}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(8,8,16,0.88);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+  transition:background .3s;
+}
+[data-theme="light"] nav{background:rgba(253,244,251,0.92)}
+.nav-inner{
+  max-width:1080px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+  height:62px;padding:0 24px;
+}
+.nav-logo{
+  font-family:'Syne',sans-serif;font-weight:800;font-size:1.25rem;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  text-decoration:none;letter-spacing:-0.01em;
+}
+.nav-links{display:flex;gap:4px;align-items:center}
+.nav-links a{
+  color:var(--text2);text-decoration:none;
+  font-size:0.82rem;font-weight:500;letter-spacing:0.03em;
+  padding:5px 12px;border-radius:var(--radius-sm);transition:all .2s;
+}
+.nav-links a:hover{color:var(--text);background:var(--bg3)}
+.theme-btn{
+  background:var(--bg3);border:1px solid var(--border);
+  color:var(--text);cursor:pointer;padding:6px 10px;
+  border-radius:var(--radius-sm);font-size:0.95rem;
+  transition:all .2s;line-height:1;margin-left:6px;
+}
+.theme-btn:hover{background:var(--bg4)}
+.hamburger{display:none;background:none;border:none;color:var(--text);cursor:pointer;font-size:1.4rem;padding:4px}
+.mobile-menu{
+  display:none;position:fixed;top:62px;left:0;right:0;
+  background:var(--bg2);border-bottom:1px solid var(--border);
+  padding:16px 24px;z-index:99;flex-direction:column;gap:2px;
+}
+.mobile-menu a{
+  color:var(--text2);text-decoration:none;padding:12px 8px;
+  border-bottom:1px solid var(--border);font-size:0.95rem;
+  display:block;transition:color .2s;
+}
+.mobile-menu a:hover{color:var(--accent)}
+.mobile-menu.open{display:flex}
+
+/* ── HERO ── */
+#hero{
+  min-height:100vh;display:flex;align-items:center;
+  padding-top:80px;position:relative;overflow:hidden;
+}
+.hero-orb1{
+  position:absolute;width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(224,92,173,0.14) 0%,transparent 70%);
+  top:-100px;right:-100px;pointer-events:none;
+}
+.hero-orb2{
+  position:absolute;width:400px;height:400px;border-radius:50%;
+  background:radial-gradient(circle,rgba(168,85,247,0.10) 0%,transparent 70%);
+  bottom:0;left:-80px;pointer-events:none;
+}
+.hero-dots{
+  position:absolute;inset:0;
+  background-image:radial-gradient(var(--border) 1px,transparent 1px);
+  background-size:36px 36px;opacity:0.4;pointer-events:none;
+}
+.hero-content{
+  position:relative;z-index:1;
+  display:grid;grid-template-columns:1fr 280px;gap:56px;align-items:center;width:100%;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--glow);border:1px solid var(--border2);
+  color:var(--accent);font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;
+  padding:6px 16px;border-radius:100px;margin-bottom:20px;
+  animation:fadeUp .5s ease both;
+}
+.hero-dot{width:6px;height:6px;background:var(--accent3);border-radius:50%;animation:pulse 2s infinite}
+.hero-name{
+  font-size:clamp(2.8rem,5.5vw,4.6rem);font-weight:800;
+  line-height:1.05;letter-spacing:-0.025em;margin-bottom:10px;
+  animation:fadeUp .5s .08s ease both;
+}
+.hero-name .g{
+  background:linear-gradient(135deg,var(--accent) 0%,var(--accent2) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.hero-role{
+  font-size:1.25rem;color:var(--text2);font-weight:300;
+  margin-bottom:20px;letter-spacing:0.01em;
+  animation:fadeUp .5s .16s ease both;
+}
+.hero-desc{
+  font-size:1rem;color:var(--text2);max-width:540px;
+  line-height:1.85;margin-bottom:36px;
+  animation:fadeUp .5s .24s ease both;
+}
+.hero-btns{display:flex;gap:10px;flex-wrap:wrap;animation:fadeUp .5s .32s ease both;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 22px;border-radius:var(--radius-sm);
+  font-family:'Syne',sans-serif;font-weight:600;font-size:0.85rem;
+  text-decoration:none;cursor:pointer;border:none;
+  transition:all .25s;letter-spacing:0.03em;
+}
+.btn-primary{
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#fff;box-shadow:0 0 24px var(--glow);
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(224,92,173,.4)}
+.btn-secondary{background:transparent;border:1px solid var(--border2);color:var(--text)}
+.btn-secondary:hover{background:var(--bg3);border-color:var(--accent)}
+.btn-ghost{background:var(--bg3);color:var(--text2);border:1px solid var(--border)}
+.btn-ghost:hover{background:var(--bg4);color:var(--text)}
+.hero-social{display:flex;gap:10px;margin-top:24px;animation:fadeUp .5s .4s ease both;}
+.soc{
+  width:40px;height:40px;border-radius:var(--radius-sm);
+  background:var(--bg3);border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--text2);text-decoration:none;font-size:1rem;transition:all .2s;
+}
+.soc:hover{background:var(--accent);color:#fff;border-color:var(--accent);transform:translateY(-2px)}
+.hero-card{
+  width:280px;height:320px;border-radius:20px;
+  background:linear-gradient(145deg,var(--bg3),var(--bg4));
+  border:1px solid var(--border2);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;
+  box-shadow:0 0 60px var(--glow),0 0 120px var(--glow2);
+  animation:fadeUp .5s .48s ease both;position:relative;overflow:hidden;
+}
+.hero-card::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(224,92,173,.07),rgba(168,85,247,.07));
+}
+.avatar-ring{
+  width:110px;height:110px;border-radius:50%;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  padding:3px;position:relative;z-index:1;
+}
+.avatar-inner{
+  width:100%;height:100%;border-radius:50%;
+  background:var(--bg4);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Syne',sans-serif;font-weight:800;font-size:2.2rem;
+  background:linear-gradient(135deg,var(--bg3),var(--bg4));
+}
+.avatar-initials{
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.hero-card-name{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;position:relative;z-index:1}
+.hero-card-role{font-size:0.78rem;color:var(--text2);position:relative;z-index:1;text-align:center;padding:0 16px}
+.status-pill{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(52,211,153,.12);border:1px solid rgba(52,211,153,.3);
+  color:var(--accent3);font-size:0.72rem;font-weight:600;letter-spacing:0.05em;
+  padding:5px 12px;border-radius:100px;position:relative;z-index:1;
+}
+.status-dot{width:5px;height:5px;background:var(--accent3);border-radius:50%;animation:pulse 2s infinite}
+
+/* ── SECTIONS ── */
+section{padding:88px 0}
+.sl{font-size:0.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;display:block}
+.st{font-size:clamp(1.7rem,3.5vw,2.5rem);font-weight:800;margin-bottom:14px;letter-spacing:-.02em}
+.ss{color:var(--text2);font-size:.96rem;max-width:540px;line-height:1.85}
+.sh{margin-bottom:52px}
+.div{width:52px;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:2px;margin:14px 0}
+
+/* ── ABOUT ── */
+#about{background:var(--bg2)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.about-text p{color:var(--text2);margin-bottom:14px;line-height:1.9;font-size:.97rem}
+.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
+.stat-c{
+  background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);
+  padding:18px;text-align:center;
+}
+.stat-n{
+  font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.stat-l{font-size:.75rem;color:var(--text2);margin-top:3px}
+.info-list{display:flex;flex-direction:column;gap:12px}
+.info-i{
+  display:flex;align-items:flex-start;gap:14px;padding:16px;
+  background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);
+}
+.ii-icon{width:38px;height:38px;background:var(--glow);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.ii-lbl{font-size:.72rem;color:var(--text2);margin-bottom:2px}
+.ii-val{font-weight:500;font-size:.9rem}
+
+/* ── SKILLS ── */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:20px}
+.sk-cat{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:border-color .25s}
+.sk-cat:hover{border-color:var(--border2)}
+.sk-title{font-family:'Syne',sans-serif;font-weight:700;font-size:.92rem;margin-bottom:16px;display:flex;align-items:center;gap:9px}
+.sk-icon{width:30px;height:30px;background:var(--glow);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0}
+.tags{display:flex;flex-wrap:wrap;gap:7px}
+.tag{
+  padding:5px 13px;border-radius:100px;font-size:.77rem;font-weight:500;
+  background:var(--bg3);border:1px solid var(--border);color:var(--text2);
+  transition:all .2s;cursor:default;
+}
+.tag:hover{background:var(--glow);border-color:var(--accent);color:var(--accent)}
+.tag.hi{background:var(--glow);border-color:var(--border2);color:var(--accent)}
+
+/* ── PROJECTS ── */
+#projects{background:var(--bg2)}
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:22px}
+.proj-card{
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:26px;display:flex;flex-direction:column;gap:14px;
+  transition:all .3s;position:relative;overflow:hidden;
+}
+.proj-card::after{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  transform:scaleX(0);transition:transform .3s;transform-origin:left;
+}
+.proj-card:hover{border-color:var(--border2);transform:translateY(-4px);box-shadow:var(--shadow)}
+.proj-card:hover::after{transform:scaleX(1)}
+.proj-card.featured{border-color:var(--border2)}
+.feat-badge{
+  display:inline-flex;align-items:center;gap:5px;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#fff;font-size:.68rem;font-weight:700;letter-spacing:.05em;
+  padding:3px 10px;border-radius:100px;margin-bottom:2px;width:fit-content;
+}
+.proj-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.proj-icon{width:42px;height:42px;background:var(--glow);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.proj-links{display:flex;gap:7px}
+.pl{
+  width:30px;height:30px;background:var(--bg3);border:1px solid var(--border);
+  border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;
+  color:var(--text2);text-decoration:none;font-size:.82rem;transition:all .2s;
+}
+.pl:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+.proj-title{font-family:'Syne',sans-serif;font-weight:700;font-size:1.08rem;margin-top:10px}
+.proj-desc{font-size:.875rem;color:var(--text2);line-height:1.85;flex:1}
+.proj-desc ul{padding-left:16px;display:flex;flex-direction:column;gap:5px}
+.proj-desc li{list-style:none;padding-left:16px;position:relative}
+.proj-desc li::before{content:'▸';position:absolute;left:0;color:var(--accent3);font-size:.8rem}
+.tech-row{display:flex;flex-wrap:wrap;gap:6px}
+.tp{padding:3px 10px;border-radius:100px;font-size:.72rem;font-weight:500;background:var(--bg3);border:1px solid var(--border);color:var(--text2)}
+
+/* ── EDUCATION ── */
+.edu-tl{display:flex;flex-direction:column}
+.edu-item{
+  display:grid;grid-template-columns:180px 1fr;gap:36px;
+  padding:28px 0;border-bottom:1px solid var(--border);
+}
+.edu-item:last-child{border-bottom:none}
+.edu-yr{font-family:'Syne',sans-serif;font-weight:700;color:var(--accent);font-size:.85rem}
+.edu-pd{font-size:.76rem;color:var(--text2);margin-top:3px}
+.edu-deg{font-family:'Syne',sans-serif;font-weight:700;font-size:1.1rem;margin-bottom:3px}
+.edu-sch{color:var(--accent2);font-weight:500;margin-bottom:6px;font-size:.93rem}
+.edu-det{font-size:.875rem;color:var(--text2);line-height:1.8}
+.edu-bdg{
+  display:inline-block;padding:3px 12px;background:var(--glow);
+  border:1px solid var(--border2);border-radius:100px;
+  font-size:.78rem;color:var(--accent);margin-top:8px;
+}
+
+/* ── CERTIFICATIONS ── */
+#certifications{background:var(--bg2)}
+.cert-card{
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:28px;transition:all .25s;
+}
+.cert-card:hover{border-color:var(--border2);transform:translateY(-2px);box-shadow:var(--shadow)}
+.cert-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:20px}
+.cert-icon{width:52px;height:52px;border-radius:var(--radius);background:var(--glow);display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0}
+.cert-org{font-family:'Syne',sans-serif;font-weight:700;font-size:1.1rem}
+.cert-name{color:var(--accent);font-weight:500;font-size:.9rem;margin-top:3px}
+.cert-duration{font-size:.78rem;color:var(--text2);margin-top:2px}
+.cert-points{list-style:none;display:flex;flex-direction:column;gap:8px}
+.cert-points li{font-size:.875rem;color:var(--text2);padding-left:18px;position:relative;line-height:1.75}
+.cert-points li::before{content:'▸';position:absolute;left:0;color:var(--accent3);font-size:.8rem}
+
+/* ── CONTACT ── */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.c-links{display:flex;flex-direction:column;gap:12px;margin-top:28px}
+.c-item{
+  display:flex;align-items:center;gap:14px;padding:16px;
+  background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);
+  text-decoration:none;color:var(--text);transition:all .2s;
+}
+.c-item:hover{border-color:var(--accent);background:var(--glow);transform:translateX(4px)}
+.c-ico{width:38px;height:38px;background:var(--bg4);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.c-lbl{font-size:.72rem;color:var(--text2);margin-bottom:1px}
+.c-val{font-weight:500;font-size:.87rem;word-break:break-all}
+.c-form{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:28px}
+.form-title{font-family:'Syne',sans-serif;font-weight:700;font-size:1.1rem;margin-bottom:20px}
+.fg{margin-bottom:14px}
+.fg label{display:block;font-size:.76rem;font-weight:500;color:var(--text2);margin-bottom:5px;letter-spacing:.03em}
+.fg input,.fg textarea{
+  width:100%;padding:10px 14px;
+  background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);
+  color:var(--text);font-family:'DM Sans',sans-serif;font-size:.875rem;
+  outline:none;transition:border .2s;resize:none;
+}
+.fg input:focus,.fg textarea:focus{border-color:var(--accent)}
+.fg textarea{height:100px;line-height:1.7}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--bg);border-top:1px solid var(--border);
+  padding:28px 24px;
+}
+.ft{max-width:1080px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px}
+.fc{font-size:.82rem;color:var(--text2)}
+.fc strong{color:var(--accent)}
+.ft-soc{display:flex;gap:8px}
+
+/* ── ANIMATIONS ── */
+.fade-up{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease}
+.fade-up.visible{opacity:1;transform:none}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.75)}}
+
+/* ── RESPONSIVE ── */
+@media(max-width:768px){
+  nav .nav-links{display:none}
+  .hamburger{display:block}
+  .hero-content{grid-template-columns:1fr}
+  .hero-card{display:none}
+  .about-grid,.contact-grid{grid-template-columns:1fr}
+  .edu-item{grid-template-columns:1fr;gap:6px}
+  section{padding:60px 0}
+}
+@media(max-width:480px){
+  .hero-btns{flex-direction:column}
+  .hero-btns .btn{justify-content:center}
+  .proj-grid,.skills-grid{grid-template-columns:1fr}
+}
+</style> -->
+</head>
+<body>
+
+<!-- NAV -->
+<nav role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">SA.</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#certifications">Certification</a>
+      <a href="#contact">Contact</a>
+      <button class="theme-btn" id="themeToggle" aria-label="Toggle dark/light mode">🌙</button>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Open mobile menu">☰</button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="cm()">About</a>
+  <a href="#skills" onclick="cm()">Skills</a>
+  <a href="#projects" onclick="cm()">Projects</a>
+  <a href="#education" onclick="cm()">Education</a>
+  <a href="#certifications" onclick="cm()">Certification</a>
+  <a href="#contact" onclick="cm()">Contact</a>
+</div>
+
+<!-- HERO -->
+<section id="hero" aria-label="Introduction">
+  <div class="hero-orb1" aria-hidden="true"></div>
+  <div class="hero-orb2" aria-hidden="true"></div>
+  <!-- <div class="hero-dots" aria-hidden="true"></div> -->
+  <div class="container">
+    <div class="hero-content">
+      <div>
+        <div class="hero-badge"><span class="hero-dot"></span>Open to Opportunities</div>
+        <h1 class="hero-name">Hi, I'm<br><span class="g">Shruthi Anugu</span></h1>
+        <p class="hero-role">Aspiring Full-Stack Developer</p>
+        <p class="hero-desc">
+          A motivated Full Stack Developer enthusiast with hands-on expertise in Python, Django, and React.js. I'm passionate about crafting scalable, user-centric web applications — and I'm eager to bring problem-solving energy to a team where I can grow and make an impact.
+        </p>
+        <div class="hero-btns">
+          <a href="#projects" class="btn btn-primary">View Projects →</a>
+          <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+          <a href="Shruthi.pdf" class="btn btn-ghost" id="resumeBtn"> Resume</a>
+        </div>
+        <div class="hero-social">
+          <a href="https://github.com/anugushruthii" target="_blank" rel="noopener" class="soc" aria-label="GitHub">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/anugu-shruthi-a67a61320" target="_blank" rel="noopener" class="soc" aria-label="LinkedIn">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="mailto:anugushruthii@gmail.com" class="soc" aria-label="Email">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="hero-card" aria-hidden="true">
+        <div class="avatar-ring">
+          <div class="avatar-inner"><span class="avatar-initials">SA</span></div>
+        </div>
+        <div class="hero-card-name">Shruthi Anugu</div>
+        <div class="hero-card-role">Full-Stack Developer · Python · Django · React</div>
+        <div class="status-pill"><span class="status-dot"></span>Available for hire</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" aria-labelledby="about-h">
+  <div class="container">
+    <div class="about-grid">
+      <div class="fade-up">
+        <span class="sl">About Me</span>
+        <h2 class="st" id="about-h">Building with Code,<br>Driven by Curiosity</h2>
+        <div class="div"></div>
+        <div class="about-text">
+          <p>I'm B.Tech graduate in Metallurgical and Materials Engineering from Rajiv Gandhi University of Knowledge Technologies, with a genuine pivot into software development driven by deep self-directed learning and hands-on training.</p>
+          <p>Through 8 months of intensive full-stack training at QSpiders, I've built a strong foundation in Python, Django, React.js, and database design — developing real-world projects that span from responsive food delivery UIs to complete banking systems.</p>
+          <p>I thrive at the intersection of clean architecture and thoughtful UX. I'm a quick learner who enjoys debugging complex problems and always looks for ways to write more efficient, maintainable code.</p>
+        </div>
+        <div class="about-stats">
+          <div class="stat-c">
+            <div class="stat-n">3</div>
+            <div class="stat-l">Projects Built</div>
+          </div>
+          <div class="stat-c">
+            <div class="stat-n">8.18</div>
+            <div class="stat-l">B.Tech CGPA</div>
+          </div>
+          <div class="stat-c">
+            <div class="stat-n">8mo</div>
+            <div class="stat-l">Intensive Training</div>
+          </div>
+          <div class="stat-c">
+            <div class="stat-n">5+</div>
+            <div class="stat-l">Tech Stacks</div>
+          </div>
+        </div>
+      </div>
+      <div class="info-list fade-up">
+        <div class="info-i">
+          <div class="ii-icon">🎓</div>
+          <div>
+            <div class="ii-lbl">Degree</div>
+            <div class="ii-val">B.Tech — Metallurgical &amp; Materials Engineering</div>
+          </div>
+        </div>
+        <div class="info-i">
+          <div class="ii-icon">🏛️</div>
+          <div>
+            <div class="ii-lbl">University</div>
+            <div class="ii-val">Rajiv Gandhi University of Knowledge Technologies-Basar</div>
+          </div>
+        </div>
+        <div class="info-i">
+          <div class="ii-icon">📅</div>
+          <div>
+            <div class="ii-lbl">Graduation</div>
+            <div class="ii-val">2025</div>
+          </div>
+        </div>
+        <div class="info-i">
+          <div class="ii-icon">📍</div>
+          <div>
+            <div class="ii-lbl">Location</div>
+            <div class="ii-val">Hyderabad, Telangana, India</div>
+          </div>
+        </div>
+        <div class="info-i">
+          <div class="ii-icon">📱</div>
+          <div>
+            <div class="ii-lbl">Phone</div>
+            <div class="ii-val">+91-7569689584</div>
+          </div>
+        </div>
+        <div class="info-i">
+          <div class="ii-icon">💼</div>
+          <div>
+            <div class="ii-lbl">Status</div>
+            <div class="ii-val">Actively seeking Full-time / Internship roles</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" aria-labelledby="skills-h">
+  <div class="container">
+    <div class="sh fade-up">
+      <span class="sl">Technical Arsenal</span>
+      <h2 class="st" id="skills-h">Skills &amp; Technologies</h2>
+      <div class="div"></div>
+      <p class="ss">A focused, practical skillset built through real-world project development, intensive training, and consistent self-improvement.</p>
+    </div>
+    <div class="skills-grid">
+      <div class="sk-cat fade-up">
+        <div class="sk-title"><div class="sk-icon">🌐</div>Frontend</div>
+        <div class="tags">
+          <span class="tag">React.js</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">HTML5</span>
+          <span class="tag">CSS3</span>
+          <span class="tag">React Hooks</span>
+          <!-- <span class="tag">Component Architecture</span> -->
+        </div>
+      </div>
+      <div class="sk-cat fade-up">
+        <div class="sk-title"><div class="sk-icon">⚙️</div>Backend</div>
+        <div class="tags">
+          <span class="tag">Django</span>
+          <span class="tag">Python</span>
+          <span class="tag">REST API</span>
+          <span class="tag">Django ORM</span>
+          <!-- <span class="tag">MVT Architecture</span> -->
+          <!-- <span class="tag">CRUD Operations</span> -->
+        </div>
+      </div>
+      <div class="sk-cat fade-up">
+        <div class="sk-title"><div class="sk-icon">🗄️</div>Databases</div>
+        <div class="tags">
+          <span class="tag">MySQL</span>
+          <span class="tag">SQLite</span>
+          <span class="tag">Oracle</span>
+          <span class="tag">MongoDB</span>
+          <!-- <span class="tag">Database Design</span> -->
+          <!-- <span class="tag">Normalized Schemas</span> -->
+        </div>
+      </div>
+      <div class="sk-cat fade-up">
+        <div class="sk-title"><div class="sk-icon">📊</div>Data &amp; Analysis</div>
+        <div class="tags">
+          <span class="tag">Pandas</span>
+          <span class="tag">NumPy</span>
+          <!-- <span class="tag">Data Manipulation</span> -->
+          <!-- <span class="tag">Python Scripting</span> -->
+        </div>
+      </div>
+      <div class="sk-cat fade-up">
+        <div class="sk-title"><div class="sk-icon">🔧</div>Tools &amp; Practices</div>
+        <div class="tags">
+          <span class="tag">Git &amp; GitHub</span>
+          <span class="tag">Manual Testing</span>
+          <span class="tag">SDLC</span>
+          <span class="tag">Agile Methodologies</span>
+          
+          <!-- <span class="tag">System Analysis</span> -->
+        </div>
+      </div>
+      <div class="sk-cat fade-up">
+        <div class="sk-title"><div class="sk-icon">🤝</div>Professional Skills</div>
+        <div class="tags">
+          <span class="tag">Problem Solving</span>
+          <span class="tag">Critical Thinking</span>
+          <span class="tag">Quick Learning</span>
+          <!-- <span class="tag">Adaptability</span> -->
+          <!-- <span class="tag">Attention to Detail</span> -->
+          <span class="tag">Debugging</span>
+          <!-- <span class="tag">Collaboration</span> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" aria-labelledby="projects-h">
+  <div class="container">
+    <div class="sh fade-up">
+      <!-- <span class="sl">Portfolio</span> -->
+      <h2 class="st" id="projects-h">Projects</h2>
+      <div class="div"></div>
+      <p class="ss">Real-world applications built from scratch, demonstrating full-stack development capability across frontend, backend, and database layers.</p>
+    </div>
+    <div class="proj-grid">
+
+      <!-- Food Hub -->
+      <div class="proj-card featured fade-up">
+        <!-- <span class="feat-badge">⭐ Featured</span> -->
+        <div class="proj-top">
+          <div class="proj-icon">🍔</div>
+          <div class="proj-links">
+            <a href="https://github.com/anugushruthii" target="_blank" rel="noopener" class="pl" title="GitHub" aria-label="View on GitHub">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="proj-title">Food Hub — Food Delivery Web App</div>
+        <div class="proj-desc">
+          <ul>
+            <li>Built a fully responsive food delivery app using React.js with component-based architecture.</li>
+            <li>Implemented dynamic data fetching via APIs to display restaurant listings and detailed menus.</li>
+            <li>Developed reusable UI components — Navbar, Restaurant Cards, Menu Pages — for maintainability.</li>
+            <li>Used React Hooks (useState, useEffect) for state management and lifecycle handling.</li>
+            <li>Added filtering and search functionality to enhance user experience across devices.</li>
+          </ul>
+        </div>
+        <div class="tech-row">
+          <span class="tp">React.js</span><span class="tp">JavaScript</span><span class="tp">React Hooks</span><span class="tp">CSS3</span>
+        </div>
+      </div>
+
+      <!-- Bank Account -->
+      <div class="proj-card fade-up">
+        <div class="proj-top">
+          <div class="proj-icon">🏦</div>
+          <!-- <div class="proj-links"> 
+            <a href="https://github.com/anugushruthii" target="_blank" rel="noopener" class="pl" title="GitHub" aria-label="View on GitHub">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+          </div> -->
+        </div>
+        <div class="proj-title">Bank Account Management System</div>
+        <div class="proj-desc">
+          <ul>
+            <li>Built a Python application to manage customer accounts, transactions, and balances using MySQL.</li>
+            <li>Designed a normalized relational database schema for efficient banking data storage and retrieval.</li>
+            <li>Built input verification to detect invalid operations and enforce data integrity.</li>
+            <li>Applied systematic debugging and testing to eliminate logical errors and improve reliability.</li>
+          </ul>
+        </div>
+        <div class="tech-row">
+          <span class="tp">Python</span><span class="tp">MySQL</span><span class="tp">Database Design</span>
+        </div>
+      </div>
+
+      <!-- To-Do List -->
+      <div class="proj-card fade-up">
+        <div class="proj-top">
+          <div class="proj-icon">✅</div>
+          <!-- <div class="proj-links">
+            <a href="https://github.com/anugushruthii" target="_blank" rel="noopener" class="pl" title="GitHub" aria-label="View on GitHub">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+          </div> -->
+        </div>
+        <div class="proj-title">To-Do List Application</div>
+        <div class="proj-desc">
+          <ul>
+            <li>Developed a full-stack task management web app using the Django framework (Python backend).</li>
+            <li>Implemented full CRUD operations via Django ORM with clean URL routing and modular app structure.</li>
+            <li>Designed responsive, user-friendly interfaces using HTML and CSS with Django template inheritance.</li>
+          </ul>
+        </div>
+        <div class="tech-row">
+          <span class="tp">Django</span><span class="tp">Python</span><span class="tp">SQLite</span><span class="tp">HTML</span><span class="tp">CSS</span><span class="tp">Django ORM</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" aria-labelledby="edu-h">
+  <div class="container">
+    <div class="sh fade-up">
+      <span class="sl">Academic Background</span>
+      <h2 class="st" id="edu-h">Education</h2>
+      <div class="div"></div>
+    </div>
+    <div class="edu-tl fade-up">
+      <div class="edu-item">
+        <div>
+          <div class="edu-yr">2021 – 2025</div>
+          <div class="edu-pd">B.Tech </div>
+        </div>
+        <div>
+          <div class="edu-deg">B.Tech — Metallurgical &amp; Materials Engineering</div>
+          <div class="edu-sch">Rajiv Gandhi University of Knowledge Technologies-Basar</div>
+          <!-- <div class="edu-det">Completed a rigorous engineering program while independently developing expertise in software development through self-study and structured training. Demonstrated ability to master complex technical domains outside core curriculum.</div> -->
+          <span class="edu-bdg">CGPA: 8.18 / 10</span>
+        </div>
+      </div>
+      <div class="edu-item">
+        <div>
+          <div class="edu-yr">2019 – 2021</div>
+          <div class="edu-pd">Pre-University Course</div>
+        </div>
+        <div>
+          <div class="edu-deg">Pre-University Course (PUC)</div>
+          <div class="edu-sch">Rajiv Gandhi University of Knowledge Technologies-Basar</div>
+          <!-- <div class="edu-det">Completed foundational coursework with a focus on science and analytical problem-solving subjects.</div> -->
+          <span class="edu-bdg">CGPA: 6.53 / 10</span>
+        </div>
+      </div>
+      <div class="edu-item">
+        <div>
+          <div class="edu-yr">2018 – 2019</div>
+          <div class="edu-pd">Class X</div>
+        </div>
+        <div>
+          <div class="edu-deg">Secondary School Certification</div>
+          <div class="edu-sch">Zilla Parishad High School</div>
+          <!-- <div class="edu-det">Achieved perfect score, reflecting strong academic discipline and foundational learning.</div> -->
+          <span class="edu-bdg">GPA: 10 / 10 </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications" aria-labelledby="cert-h">
+  <div class="container">
+    <div class="sh fade-up">
+      <span class="sl">Training &amp; Credentials</span>
+      <h2 class="st" id="cert-h">Certifications</h2>
+      <div class="div"></div>
+    </div>
+    <div class="fade-up">
+      <div class="cert-card" style="max-width:780px">
+        <div class="cert-header">
+          <div class="cert-icon">🏅</div>
+          <div>
+            <div class="cert-org">Full Stack Developer Certification</div>
+            <div class="cert-name">QSpiders Training Institute (Offline)</div>
+            <div class="cert-duration">Duration: 8 Months · Hyderabad</div>
+          </div>
+        </div>
+        <ul class="cert-points">
+          <li>Completed comprehensive in-person training in Python, Django, SQL, and modern web technologies.</li>
+          <li>Built interactive frontend applications using React.js, JavaScript, HTML, and CSS with hands-on projects.</li>
+          <li>Mastered React component development including hooks (useState, useEffect).</li>
+          <!-- <li>Integrated REST APIs, worked with backend technologies (Django), and designed relational database schemas.</li> -->
+          <li>Developed production-oriented projects with emphasis on React-based UI, debugging workflows, and version control using Git/GitHub.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" aria-labelledby="contact-h">
+  <div class="container">
+    <div class="sh fade-up">
+      <span class="sl">Get In Touch</span>
+      <h2 class="st" id="contact-h">Let's Connect</h2>
+      <div class="div"></div>
+      <p class="ss">I'm actively looking for full-time roles and internships in software development. Whether it's an opportunity, a collaboration, or just a hello — I'd love to hear from you.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="fade-up">
+        <h3 style="font-family:'Syne',sans-serif;font-size:1.05rem;margin-bottom:6px">Direct Channels</h3>
+        <p style="color:var(--text2);font-size:.875rem">Reach me directly through any of the platforms below.</p>
+        <div class="c-links">
+          <a href="mailto:anugushruthii@gmail.com" class="c-item">
+            <div class="c-ico">✉️</div>
+            <div>
+              <div class="c-lbl">Email</div>
+              <div class="c-val">anugushruthii@gmail.com</div>
+            </div>
+          </a>
+          <a href="tel:+917569689584" class="c-item">
+            <div class="c-ico">📱</div>
+            <div>
+              <div class="c-lbl">Phone</div>
+              <div class="c-val">+91-7569689584</div>
+            </div>
+          </a>
+          <a href="https://www.linkedin.com/in/anugu-shruthi-a67a61320" target="_blank" rel="noopener" class="c-item">
+            <div class="c-ico">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" style="color:var(--accent)"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </div>
+            <div>
+              <div class="c-lbl">LinkedIn</div>
+              <div class="c-val">linkedin.com/in/anugu-shruthi-a67a61320</div>
+            </div>
+          </a>
+          <a href="https://github.com/anugushruthii" target="_blank" rel="noopener" class="c-item">
+            <div class="c-ico">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+            </div>
+            <div>
+              <div class="c-lbl">GitHub</div>
+              <div class="c-val">github.com/anugushruthii</div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="c-form fade-up">
+        <div class="form-title">Send a Message</div>
+        <div class="fg">
+          <label for="fn">Your Name</label>
+          <input type="text" id="fn" placeholder="Recruiter / Collaborator name" autocomplete="name">
+        </div>
+        <div class="fg">
+          <label for="fe">Email Address</label>
+          <input type="email" id="fe" placeholder="you@company.com" autocomplete="email">
+        </div>
+        <div class="fg">
+          <label for="fs">Subject</label>
+          <input type="text" id="fs" placeholder="Job Opportunity / Project Collaboration">
+        </div>
+        <div class="fg">
+          <label for="fm">Message</label>
+          <textarea id="fm" placeholder="Hi Shruthi, I'd like to discuss..."></textarea>
+        </div>
+        <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="sendForm()">
+          Send Message ✉️
+        </button>
+        <p id="fc" style="display:none;margin-top:10px;color:var(--accent3);font-size:.83rem;text-align:center">✅ Thanks! Shruthi will get back to you soon.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft">
+    <div class="fc">© 2025 <strong>Shruthi Anugu</strong> · Built with passion &amp; clean code ✨</div>
+    <div class="ft-soc">
+      <a href="https://github.com/anugushruthii" target="_blank" rel="noopener" class="soc" aria-label="GitHub" style="width:34px;height:34px;font-size:.9rem">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/anugu-shruthi-a67a61320" target="_blank" rel="noopener" class="soc" aria-label="LinkedIn" style="width:34px;height:34px;font-size:.9rem">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+  emailjs.init("t0G-GZgTp9gRL7Vbm");
+</script>
+
+<script src="./script.js"></script>
+</body>
+</html>
